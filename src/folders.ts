@@ -2,6 +2,7 @@
  * Class for managing workspace folders
  */ /** */
 
+import {ConfigurationReader} from '@cmt/config';
 import CMakeTools from '@cmt/cmake-tools';
 import { KitsController } from '@cmt/kitsController';
 import rollbar from '@cmt/rollbar';
@@ -149,8 +150,20 @@ export class CMakeToolsFolderController implements vscode.Disposable {
     this._instances.set(folder.uri.fsPath, inst);
 
     // initialize kits for the cmake tools
+    let kit_name : string|null = null
+
+    // If we have a kit name from config, use it.
+    const workspaceConfig: ConfigurationReader = ConfigurationReader.create(folder);
+    const build_kit = workspaceConfig.buildKit;
+    if (build_kit) {
+      kit_name = build_kit;
+    }
+
     // Check if the CMakeTools remembers what kit it was last using in this dir:
-    const kit_name = new_cmt.workspaceContext.state.activeKitName;
+    if (!kit_name) {
+      kit_name = new_cmt.workspaceContext.state.activeKitName;
+    }
+
     if (!kit_name) {
       // No prior kit. Done.
       return inst;

@@ -43,6 +43,7 @@ function createConfig(conf: Partial<ExtensionConfigurationSettings>): Configurat
     skipConfigureIfCachePresent: null,
     useCMakeServer: true,
     cmakeCommunicationMode: 'automatic',
+    buildKit: null,
     ignoreKitEnv: false,
     buildTask: false,
     outputLogEncoding: 'auto',

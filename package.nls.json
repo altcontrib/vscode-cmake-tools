@@ -102,6 +102,7 @@
     "cmake-tools.configuration.cmake.configureOnEdit.description": "Automatically configure CMake project directories when cmake.sourceDirectory or CMakeLists.txt content are saved.",
     "cmake-tools.configuration.cmake.skipConfigureIfCachePresent.description": "Skip over the configure process if cache is present.",
     "cmake-tools.configuration.cmake.cmakeCommunicationMode": "The protocol used to communicate between the extension and CMake",
+    "cmake-tools.configuration.cmake.buildKit.description": "Build kit to use when configuring CMake.",
     "cmake-tools.configuration.cmake.ignoreKitEnv.description": "Do not use the kit environment variables when running CMake commands.",
     "cmake-tools.configuration.cmake.buildTask.description": "Build using tasks.json instead of internal process.",
     "cmake-tools.configuration.cmake.outputLogEncoding.description": "Encoding of the output from external commands (eg.cmake -- build).",

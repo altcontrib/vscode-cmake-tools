@@ -58,7 +58,6 @@
     "onCommand:cmake.buildType",
     "onCommand:cmake.buildDirectory",
     "onCommand:cmake.executableTargets",
-    "onCommand:cmake.buildKit",
     "onCommand:cmake.tasksBuildCommand",
     "onCommand:cmake.quickStart",
     "onCommand:cmake.resetState",
@@ -1271,6 +1270,12 @@
             "automatic"
           ],
           "description": "%cmake-tools.configuration.cmake.cmakeCommunicationMode%",
+          "scope": "resource"
+        },
+        "cmake.buildKit": {
+          "type": "string",
+          "default": false,
+          "description": "%cmake-tools.configuration.cmake.buildKit.description%",
           "scope": "resource"
         },
         "cmake.ignoreKitEnv": {

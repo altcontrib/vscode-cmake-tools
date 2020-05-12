@@ -19,7 +19,10 @@
                 "CMT_DEVRUN": "1"
             },
             "preLaunchTask": "build-with-webpack-watch",
-            "smartStep": false
+            "smartStep": true,
+            "skipFiles": [
+                "<node_internals>/**/*.js"
+            ]
         },
         {
             "name": "Launch Tests",
